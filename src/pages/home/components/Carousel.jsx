@@ -1,44 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import './Carousel.css'; // Optional, for styling
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import banner1 from "../../../assets/banner1.jpg";
+import banner2 from "../../../assets/banner2.jpg";
+import banner3 from "../../../assets/banner3.jpg";
+import banner4 from "../../../assets/banner4.png";
+import "./Carousel.css";
+
+// Import Swiper modules from 'swiper/modules'
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { linearGradient } from "framer-motion/client";
 
 const Carousel = () => {
-  const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your image paths
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-slide every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      showNextImage();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const showNextImage = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
-  };
-
-  const showPrevImage = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
-  };
+  const images = [banner1, banner2, banner3, banner4];
 
   return (
-    <div className="carousel">
-      <div
-        className="carousel-inner"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    <div
+      style={{
+        width: "100%",
+        margin: "10px auto", // Center the slider horizontally
+      }}
+    >
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop
+        spaceBetween={30}
+        slidesPerView={1}
+        className="mySwiper"
       >
         {images.map((image, index) => (
-          <div className="carousel-item" key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} />
-          </div>
+          <SwiperSlide key={index}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "500px",
+                  objectFit: "fill", // Ensures the image fills the slider without distortion
+                  borderRadius: "8px",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "250px",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background:
+                    "linear-gradient(to bottom, rgba(0, 0, 0, 0), #f141414)",
+                  borderRadius: "8px", // Match the image border radius
+                }}
+              ></div>
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
-      <button className="carousel-control left" onClick={showPrevImage}>
-        &#10094;
-      </button>
-      <button className="carousel-control right" onClick={showNextImage}>
-        &#10095;
-      </button>
+      </Swiper>
     </div>
   );
 };

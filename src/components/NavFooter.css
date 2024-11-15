@@ -50,9 +50,8 @@
         }
     }
 }
-
-
  */
+
 .navbar {
   width: 100%;
   padding: 0 2rem;
@@ -60,7 +59,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin-bottom: 76px;
+  margin-bottom: 30px;
 
   .logo {
     width: 200px;
@@ -78,6 +77,13 @@
     font-size: 1.5rem;
     color: white;
     cursor: pointer;
+  }
+  .rightLinks {
+    display: flex;
+    gap: 30px;
+    width: 65%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .links {
@@ -124,35 +130,56 @@
     .logo {
       width: 150px;
       height: 50px;
+      order: -1;
     }
     .hamburger {
       display: block;
       -ms-flex-order: -1;
-      order: -1;
+      order: 3;
+    }
+    .rightLinks {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 20px;
+      margin-bottom: 4px;
+      .icons {
+        -ms-flex-order: -1;
+        order: -1;
+      }
     }
 
     .links {
       display: none; /* Hidden by default */
       flex-direction: column;
+      align-items: flex-start;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       top: 100%;
-      background-color: #0f0f0f;
+      right: 10px;
       border-radius: 8px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      width: 100%;
+      width: 50%;
       padding: 1.5rem;
       border: none;
-      background-color: transparent;
-      height: inherit;
+      background-color: #1E1E1E;
+      height: auto;
+      z-index: 999;
+      a:hover {
+        display: block;
+        color: #fff;
+        background-color: inherit;
+        height: auto;
+        align-items: center;
+        padding: 0;
+      }
     }
 
     .links.open {
       display: flex; /* Show links when menu is open */
+      /* show links in the right instead of middle */
     }
   }
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     .links {
       width: 100%;
       padding: 0.5rem;
@@ -164,5 +191,5 @@
         font-size: 16px;
       }
     }
-  }
+  } */
 }

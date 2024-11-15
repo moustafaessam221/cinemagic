@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import logo2 from "../assets/logo.svg";
 import "./NavFooter.css";
-import { CiSearch } from "react-icons/ci";
-import { FaBell, FaBars } from "react-icons/fa";
+import { CiBellOn, CiSearch } from "react-icons/ci";
+import { FaBell, FaBars, FaSearch } from "react-icons/fa";
+import { HiBars3 } from "react-icons/hi2";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,17 +18,19 @@ function Navbar() {
         <img src={logo2} alt="logo" />
       </div>
       <button className="hamburger" onClick={toggleMenu}>
-        <FaBars />
+        <HiBars3 />
       </button>
-      <div className={`links ${isMenuOpen ? "open" : ""}`}>
-        <a href="/">Home</a>
-        <a href="/myMovies">My Movies</a>
-        <a href="/support">Support</a>
-        <a href="/subscriptions">Subscriptions</a>
-      </div>
-      <div className="icons">
-        <CiSearch />
-        <FaBell />
+      <div className="rightLinks">
+        <div className={`links ${isMenuOpen ? "open" : ""}`}>
+          <a href="/">Home</a>
+          <a href="/movies">Movies</a>
+          <a href="/watchlist">Watchlist</a>
+          <a href="/subscriptions">Subscriptions</a>
+        </div>
+        <div className="icons">
+          <CiSearch />
+          <CiBellOn />
+        </div>
       </div>
     </div>
   );
