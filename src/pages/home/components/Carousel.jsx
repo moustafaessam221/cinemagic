@@ -50,6 +50,7 @@ const Carousel = () => {
                   height: "500px",
                   objectFit: "fill", // Ensures the image fills the slider without distortion
                   borderRadius: "8px",
+                  // please work! 🥺🥺
                 }}
               />
               <div
