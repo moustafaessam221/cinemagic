@@ -9,20 +9,13 @@ import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.png";
 import "./Carousel.css";
 
-// Import Swiper modules from 'swiper/modules'
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { linearGradient } from "framer-motion/client";
 
 const Carousel = () => {
   const images = [banner1, banner2, banner3, banner4];
 
   return (
-    <div
-      style={{
-        width: "100%",
-        margin: "10px auto", // Center the slider horizontally
-      }}
-    >
+    <div className="carousel-container">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -35,36 +28,13 @@ const Carousel = () => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
-              }}
-            >
+            <div className="carousel-slide">
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                style={{
-                  width: "100%",
-                  height: "500px",
-                  objectFit: "fill", // Ensures the image fills the slider without distortion
-                  borderRadius: "8px",
-                  // please work! 🥺🥺
-                }}
+                className="carousel-image"
               />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "250px",
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background:
-                    "linear-gradient(to bottom, rgba(0, 0, 0, 0), #f141414)",
-                  borderRadius: "8px", // Match the image border radius
-                }}
-              ></div>
+              <div className="overlay"></div>
             </div>
           </SwiperSlide>
         ))}
