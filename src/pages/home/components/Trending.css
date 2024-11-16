@@ -73,4 +73,35 @@
       }
     }
   }
+
+  @media (max-width:768px) and (min-width:320px) {
+    .trending-movies{
+    
+    justify-content: space-around;
+    
+    }
+  }
+
+  @media (max-width:1024px) and (min-width:320px) {
+    .trending-header {
+      flex-wrap: wrap; 
+      gap: 10px;
+    }
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .blank_line {
+        display: none; 
+      }
+      .view {
+        font-size: 0.9rem; 
+      }
+  }
 }
+
+
+
+
+
+
