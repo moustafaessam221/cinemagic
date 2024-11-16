@@ -47,7 +47,7 @@ const Carousel = () => {
                 alt={`Slide ${index + 1}`}
                 style={{
                   width: "100%",
-                  height: "500px",
+                  height: "600px",
                   objectFit: "fill", // Ensures the image fills the slider without distortion
                   borderRadius: "8px",
                 }}
