@@ -1,18 +1,19 @@
-import React from 'react';
-import "./MovieDetails.css";
-import { useParams } from 'react-router-dom';
-
-
+import React from "react";
+import "../MovieDetails.css";
+import { useParams } from "react-router-dom";
 
 function MovieReviews({ reviews }) {
+  if (!reviews) {
+    return <div>Loading reviews...</div>; // Or return nothing until reviews is available
+  }
   return (
     <div className="content-row reviews">
       <h2>Reviews</h2>
-      {reviews.map(review => (
-        <div className="review-card" key={review.id}>
+      {reviews.map((review, index) => (
+        <div className="review-card" key={index}>
           <div className="review-header">
-            <h4>{review.author}</h4>
-            <div className="review-rating">★★★★☆</div>
+            <p>{review.Source}</p>
+            <div className="review-rating">{review.Value}</div>
           </div>
           <p>{review.content}</p>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./MovieDetails.css";
+import "../MovieDetails.css";
 import { useParams } from 'react-router-dom';
 
 
