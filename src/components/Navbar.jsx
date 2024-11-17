@@ -1,5 +1,4 @@
 
-import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import logo2 from "../assets/logo.svg";
 import "./NavFooter.css";

@@ -1,5 +1,4 @@
 
-import { useParams } from "react-router-dom";
 import React from "react";
 import Carousel from "./components/Carousel";
 import Trending from "./components/Trending";
