@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsFire } from "react-icons/bs";
-import "./NewRelase.css";
+import "./Trending.css";
 import { FaArrowRight } from "react-icons/fa";
 import { LuClock3 } from "react-icons/lu";
 import { RiMovie2Fill } from "react-icons/ri";

@@ -33,9 +33,11 @@ function Trending() {
       </div>
       <div className="trending-movies">
         {/* movie function */}
-        {movies.map((movie, key) => (
-          <MovieCard key={key} movie={movie} />
-        ))}
+        {movies.length > 0 ? (
+          movies.map((movie, key) => <MovieCard key={key} movie={movie} />)
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );
