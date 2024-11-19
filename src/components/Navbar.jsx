@@ -1,16 +1,24 @@
-
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { CiBellOn, CiSearch } from "react-icons/ci";
+import { HiBars3 } from "react-icons/hi2";
 import logo2 from "../assets/logo.svg";
 import "./NavFooter.css";
-import { CiBellOn, CiSearch } from "react-icons/ci";
-import { FaBell, FaBars, FaSearch } from "react-icons/fa";
-import { HiBars3 } from "react-icons/hi2";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    if (searchRef.current) {
+      searchRef.current.focus();
+    }
   };
 
   return (
@@ -29,10 +37,15 @@ function Navbar() {
           <a href="/subscriptions">Subscriptions</a>
         </div>
         <div className="icons">
-          <CiSearch />
+          <CiSearch onClick={toggleSearch} />
           <CiBellOn />
         </div>
       </div>
+      {isSearchOpen && (
+        <div className={`search-container ${isSearchOpen ? "open" : ""}`}>
+          <SearchBar ref={searchRef} />
+        </div>
+      )}
     </div>
   );
 }

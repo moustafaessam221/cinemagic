@@ -1,0 +1,40 @@
+.movie_card {
+  width: 250px;
+  height: 377px;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  img {
+    aspect-ratio: 3/4;
+    height: 281px;
+    border-radius: 12px;
+  }
+  .short-details {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #999999;
+      font-size: 14px;
+      background-color: #141414;
+      width: 100%;
+      height: 30px;
+      margin-bottom: 5px;
+      border-radius: 51px;
+      border: 1px solid #262626;
+    }
+    .card-icon {
+      margin-right: 5px;
+    }
+  }
+}

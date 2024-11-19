@@ -2,11 +2,22 @@ import React from "react";
 import { LuClock3 } from "react-icons/lu";
 import { RiMovie2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import "./MovieCard.css";
+import { motion } from "framer-motion";
 
 function MovieCard({ movie }) {
   return (
+    // add animation with framer motion
+
     <Link to={`/movies/${movie.imdbID}`}>
-      <div className="movie_card">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial = {{ opacity: 0 }}
+        animate = {{ opacity: 1 }}
+        // transition = {{ duration: 0.3 }}
+        className="movie_card"
+      >
         <img src={movie.Poster} alt={movie.Title} />
         <div className="short-details">
           <p>
@@ -18,12 +29,9 @@ function MovieCard({ movie }) {
             {movie.Year}
           </p>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }
 
 export default MovieCard;
-
-// lazem 7eta mo3ina
-// 3awza ay 7ta? 7ader
