@@ -9,7 +9,7 @@ function MovieInfo({ movie }) {
   return (
     <div className="movie-info-column">
       <div className="main">
-        <img src={movie.Poster} alt={movie.Title} />
+        <img className="poster" src={movie.Poster} alt={movie.Title} />
         <div className="poster-overlay">
           <h2>{movie.Title}</h2>
           <button className="play-trailer-btn">Play Trailer</button>
