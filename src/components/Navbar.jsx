@@ -4,6 +4,7 @@ import { HiBars3 } from "react-icons/hi2";
 import logo2 from "../assets/logo.svg";
 import "./NavFooter.css";
 import SearchBar from "./SearchBar";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,9 +43,14 @@ function Navbar() {
         </div>
       </div>
       {isSearchOpen && (
-        <div className={`search-container ${isSearchOpen ? "open" : ""}`}>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: isSearchOpen ? 1 : 0, y: isSearchOpen ? 0 : -20 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className={`search-container ${isSearchOpen ? "open" : ""}`}
+        >
           <SearchBar ref={searchRef} />
-        </div>
+        </motion.div>
       )}
     </div>
   );

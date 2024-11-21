@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BsFire } from "react-icons/bs";
-import "./Trending.css";
 import { FaArrowRight } from "react-icons/fa";
-import { LuClock3 } from "react-icons/lu";
-import { RiMovie2Fill } from "react-icons/ri";
 import MovieCard from "./MovieCard";
+import "./Trending.css";
 function Trending() {
   const apiKey = process.env.REACT_APP_OMDB_API;
 
