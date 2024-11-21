@@ -16,6 +16,10 @@ function NewRelase() {
       .then((data) => setMovies(data.Search));
   }, []);
 
+  if (!movies) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="trending">
       <div className="trending-header">
