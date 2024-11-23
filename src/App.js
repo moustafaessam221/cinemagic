@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import MovieDetails from "./pages/movieDetails/MovieDetails";
 import SearchResults from "./pages/searchResults/SearchResults";
 import LoadingIndicator from "./components/LoadingIndicator";
+import Movies from "./pages/movie/Movies";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies/:movieId" element={<MovieDetails />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/movies" element={<Movies />} />
       </Routes>
       <Footer />
     </BrowserRouter>

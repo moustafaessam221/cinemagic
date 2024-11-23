@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { CiBellOn, CiSearch } from "react-icons/ci";
 import { HiBars3 } from "react-icons/hi2";
+import { Link, useLocation } from "react-router-dom";
 import logo2 from "../assets/logo.svg";
 import "./NavFooter.css";
 import SearchBar from "./SearchBar";
@@ -21,6 +22,8 @@ function Navbar() {
       searchRef.current.focus();
     }
   };
+// get the url path
+  const linkPath = useLocation().pathname;
 
   return (
     <div className="navbar">
@@ -32,10 +35,9 @@ function Navbar() {
       </button>
       <div className="rightLinks">
         <div className={`links ${isMenuOpen ? "open" : ""}`}>
-          <a href="/">Home</a>
-          <a href="/movies">Movies</a>
-          <a href="/watchlist">Watchlist</a>
-          <a href="/subscriptions">Subscriptions</a>
+          <Link to="/" className={linkPath === "/" ? "active" : ""}>Home</Link>
+          <Link to="/movies" className={linkPath === "/movies" ? "active" : ""}>Movies</Link>
+          <Link to="/movies" className={linkPath === "/subscriptions" ? "active" : ""}>Subscriptions</Link>
         </div>
         <div className="icons">
           <CiSearch onClick={toggleSearch} />
