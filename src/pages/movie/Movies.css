@@ -3,8 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  background-color: #121212;
+  background-color: #1E1E1E;
   border-radius: 12px;
-  border: 1px solid #262626;
   justify-content: center; /* Center cards horizontally */
 }

@@ -25,6 +25,21 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #141414);
     border-radius: 8px;
   }
+
+  .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    color: #FA4032;
+    }
+
+ .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+      content: "prev";
+      color: #FA4032;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #FA4032;
+    
+  }
+
   
   /* Responsive Styles */
   @media (max-width: 570px) {
