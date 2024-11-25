@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaTelegramPlane, FaChevronRight } from 'react-icons/fa';
-import './NavFooter.css';
+import'./Footer.css';
 
 const Footer = () => {
   return (

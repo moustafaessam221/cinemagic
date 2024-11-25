@@ -16,13 +16,20 @@ function MovieInfo({ movie }) {
         </div>
       </div>
       <div className="info">
-        <p>Release Date: {movie.Released}</p>
-        <p>Language: {movie.Language}</p>
-        <p>Genre: {movie.Genre}</p>
-        <p>Director: {movie.Director}</p>
-        <p>Writers: {movie.Writer}</p>
-        <p>Rated: {movie.Rated}</p>
-        <p>Awards: {movie.Awards}</p>
+        <h2>Release Date:</h2>
+        <p>{movie.Released}</p>
+        <h2>Language:</h2>
+        <p>{movie.Language}</p>
+        <h2>Genre:</h2>
+        <p>{movie.Genre}</p>
+        <h2>Director:</h2>
+        <p>{movie.Director}</p>
+        <h2>Writers: </h2>
+        <p>{movie.Writer}</p>
+        {/* <h2>Rated:</h2>
+        <p>{movie.Rated}</p>
+        <h2>Awards: </h2>
+        <p>{movie.Awards}</p> */}
       </div>
     </div>
   );

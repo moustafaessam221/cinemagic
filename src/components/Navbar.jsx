@@ -3,7 +3,7 @@ import { CiBellOn, CiSearch } from "react-icons/ci";
 import { HiBars3 } from "react-icons/hi2";
 import { Link, useLocation } from "react-router-dom";
 import logo2 from "../assets/logo.svg";
-import "./NavFooter.css";
+import "./Navbar.css";
 import SearchBar from "./SearchBar";
 import { motion } from "framer-motion";
 

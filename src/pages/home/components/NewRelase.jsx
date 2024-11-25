@@ -26,7 +26,7 @@ function NewRelase() {
         <div className="fire">
           <h2>
             <BsFire className="fire" />
-            NewRelase
+            New Release
           </h2>
         </div>
         <div className="blank_line"></div>
