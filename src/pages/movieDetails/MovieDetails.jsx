@@ -40,6 +40,7 @@ function MovieDetails() {
       </div>
 
       <div className="right-column">
+        <h2 className="movie-title">{movie.Title}</h2>
         <MovieDescription overview={movie.Plot} />
         <MovieCast castData={movie.Actors} />
         <MovieReviews reviews={movie.Ratings} />
